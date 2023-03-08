@@ -17,8 +17,8 @@ def wolf_sheep_portrayal(agent):
                  "Color": "red",
                  "Filled": "true",
                  "Layer": 1,
-                 "h": 1,
-                 "w" : 1}
+                 "h": 0.5,
+                 "w" : 0.5}
         
     elif type(agent) is Wolf:
         portrayal = {"Shape": "rect",
@@ -29,12 +29,15 @@ def wolf_sheep_portrayal(agent):
                  "w" : 0.5}
         
     elif type(agent) is GrassPatch:
-        portrayal = {"Shape": "rect",
-                 "Color": "green",
-                 "Filled": "true",
-                 "Layer": 0,
-                 "h": 1,
-                 "w" : 1}
+        if agent.fully_grown == 1:
+            portrayal = {"Shape": "rect",
+                    "Color": "green",
+                    "Filled": "true",
+                    "Layer": 0,
+                    "h": 1,
+                    "w" : 1}
+        else:
+            portrayal = {}
         
     
     return portrayal
@@ -49,8 +52,8 @@ model_params = {
     "width":20, 
     "height":20,
     "initial_sheep" : 10,
-    "initial_wolves" : 3,
-    "sheep_reproduce" : 0.04,
+    "initial_wolves" : 10,
+    "sheep_reproduce" : 0.1,
     "wolf_reproduce" : 0.05,
     "wolf_gain_from_food" : 20,
     "grass" : False,

@@ -111,7 +111,7 @@ class WolfSheep(Model):
         # Create grass patches (un patch d'herbe sur chaque case)
         for i in range(self.width):
             for j in range(self.height):
-                a = GrassPatch(self.next_id(), self, WolfSheep, True, self.grass_regrowth_time)
+                a = GrassPatch(self.next_id(), (i,j), self, True, self.grass_regrowth_time)
                 self.schedule.add(a)
                 # Add the agent to a random grid cell
                 self.grid.place_agent(a, (i, j))

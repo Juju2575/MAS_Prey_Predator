@@ -1,5 +1,5 @@
 from mesa.visualization.ModularVisualization import ModularServer
-from mesa.visualization.modules import CanvasGrid, ChartModule
+from mesa.visualization.modules import CanvasGrid, ChartModule, TextElement
 from mesa.visualization.UserParam import UserSettableParameter
 
 from prey_predator.agents import Wolf, Sheep, GrassPatch
@@ -51,14 +51,14 @@ chart_element = ChartModule(
 model_params = {
     "width":20, 
     "height":20,
-    "initial_sheep" : 10,
-    "initial_wolves" : 10,
-    "sheep_reproduce" : 0.1,
-    "wolf_reproduce" : 0.05,
-    "wolf_gain_from_food" : 20,
+    "initial_sheep" : UserSettableParameter("slider", "Initial Sheep", 10, 1, 50, 1),
+    "initial_wolves" : UserSettableParameter("slider", "Initial Wolf", 10, 1, 50, 1),
+    "sheep_reproduce" : UserSettableParameter("slider", "Sheep Growth Rate", 0.04, 0, 1, 0.02),
+    "wolf_reproduce" : UserSettableParameter("slider", "Wolf Growth Rate", 0.04, 0, 1, 0.02),
+    "wolf_gain_from_food" : UserSettableParameter("slider", "Wolf Gain from Food", 20, 1, 50, 1),
     "grass" : False,
-    "grass_regrowth_time" : 30,
-    "sheep_gain_from_food" : 4    
+    "sheep_gain_from_food" : UserSettableParameter("slider", "Sheep Gain from Food", 4, 1, 20, 1),
+    "grass_regrowth_time" : UserSettableParameter("slider", "Grass Regrowth Time", 30, 1, 50, 1)
 }
 
 server = ModularServer(

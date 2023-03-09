@@ -51,8 +51,8 @@ chart_element = ChartModule(
 model_params = {
     "width":20, 
     "height":20,
-    "initial_sheep" : UserSettableParameter("slider", "Initial Sheep", 9, 1, 30, 1),
-    "initial_wolves" : UserSettableParameter("slider", "Initial Wolf", 3, 1, 30, 1),
+    "initial_sheep" : UserSettableParameter("slider", "Initial Sheep", 10, 1, 30, 1),
+    "initial_wolves" : UserSettableParameter("slider", "Initial Wolf", 5, 1, 30, 1),
     "sheep_reproduce" : UserSettableParameter("slider", "Sheep Growth Rate", 0.04, 0, 0.2, 0.02),
     "wolf_reproduce" : UserSettableParameter("slider", "Wolf Growth Rate", 0.04, 0, 0.2, 0.02),
     "wolf_gain_from_food" : UserSettableParameter("slider", "Wolf Gain from Food", 20, 1, 50, 1),

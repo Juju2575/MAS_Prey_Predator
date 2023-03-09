@@ -57,8 +57,6 @@ class Sheep(RandomWalker):
         if self.energy<=0:
             self.die()
 
-        print(self.energy)
-
 
 class Wolf(RandomWalker):
     """

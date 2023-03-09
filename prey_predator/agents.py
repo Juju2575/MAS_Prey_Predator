@@ -11,7 +11,7 @@ class Sheep(RandomWalker):
 
     energy = None
     energy_step = 1
-    energy_growth = 5
+    energy_growth = 1
 
     def __init__(self, unique_id, pos, model, moore, energy=None):
         super().__init__(unique_id, pos, model, moore=moore)

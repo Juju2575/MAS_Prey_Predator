@@ -14,19 +14,19 @@ def wolf_sheep_portrayal(agent):
 
     if type(agent) is Sheep:
         portrayal = {"Shape": "rect",
-                 "Color": "red",
+                 "Color": "black",
                  "Filled": "true",
                  "Layer": 1,
-                 "h": 0.5,
-                 "w" : 0.5}
+                 "h": 0.4,
+                 "w" : 0.4}
         
     elif type(agent) is Wolf:
         portrayal = {"Shape": "rect",
-                 "Color": "black",
+                 "Color": "red",
                  "Filled": "true",
                  "Layer": 2,
-                 "h": 0.5,
-                 "w" : 0.5}
+                 "h": 0.7,
+                 "w" : 0.7}
         
     elif type(agent) is GrassPatch:
         if agent.fully_grown == 1:
@@ -51,10 +51,10 @@ chart_element = ChartModule(
 model_params = {
     "width":20, 
     "height":20,
-    "initial_sheep" : UserSettableParameter("slider", "Initial Sheep", 10, 1, 50, 1),
-    "initial_wolves" : UserSettableParameter("slider", "Initial Wolf", 10, 1, 50, 1),
-    "sheep_reproduce" : UserSettableParameter("slider", "Sheep Growth Rate", 0.04, 0, 1, 0.02),
-    "wolf_reproduce" : UserSettableParameter("slider", "Wolf Growth Rate", 0.04, 0, 1, 0.02),
+    "initial_sheep" : UserSettableParameter("slider", "Initial Sheep", 9, 1, 30, 1),
+    "initial_wolves" : UserSettableParameter("slider", "Initial Wolf", 3, 1, 30, 1),
+    "sheep_reproduce" : UserSettableParameter("slider", "Sheep Growth Rate", 0.04, 0, 0.2, 0.02),
+    "wolf_reproduce" : UserSettableParameter("slider", "Wolf Growth Rate", 0.04, 0, 0.2, 0.02),
     "wolf_gain_from_food" : UserSettableParameter("slider", "Wolf Gain from Food", 20, 1, 50, 1),
     "grass" : False,
     "sheep_gain_from_food" : UserSettableParameter("slider", "Sheep Gain from Food", 4, 1, 20, 1),
